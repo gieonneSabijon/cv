@@ -1,121 +1,205 @@
-\documentclass{article}
-\usepackage[a4paper,bottom=0.5cm, right=1.5cm, left=1.5cm, top=1.5cm]{geometry}
-\usepackage{array}  
-\usepackage{multicol}
-\pagenumbering{gobble}
+%-------------------------
+% Resume in Latex
+% Author : Gieonne Sabijon
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
 \usepackage{enumitem}
-\setlist[itemize]{noitemsep}
-\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \begin{document}
 
-\begin{center}
-	\Large\textbf{Gieonne Sabijon}\\
-	\noindent\hrulefill\\
-	{\small Pickering, Ontario $\cdot$ 905-995-2711 $\cdot$ gieonnesabijon@gmail.com}
-
-\end{center}
-
-\begin{center}
-	\section*{Education}
-\end{center}
-
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
 
 \begin{center}
-\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}m{0.49\textwidth} m{0.49\textwidth}}
-    \textbf{Ontario Tech University} & \hfill Oshuwa, ON \hfill\\
-    Bachelor of Science in Computer Science & \hfill 2021 - Ongoing\hfill\\
-\end{tabular*}
-\begin{flushleft}
-\textbf{Relevant Coursework}
-	\begin{itemize}
-	\item Data Structures
-	\item Software Systems Development and Integration 
-	\item Scientific Data Analysis
-	\item Software Design and Analysis
-	\end{itemize}
-\end{flushleft}
-
-\section*{Experience}
-
-\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}m{0.49\textwidth} m{0.49\textwidth}}
-
-    \textbf{Personal Website} & \hfill October 2023 \\
-    \textit{Online Portfolio}\\
-    \textit{HTML, CSS, JavaScript, GithubPages}\\
-	\multicolumn{2}{@{}p{\textwidth}@{}}{Deployed a personal portfolio website on github pages to showcase my experience and knowledge}
-
-\end{tabular*}
-
-\vspace{5mm}
-
-\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}m{0.49\textwidth} m{0.49\textwidth}}
-
-    \textbf{Sudoku Solver} & \hfill June 6, 2023 - June 9, 2023 \\
-    \textit{Individual Project}\\
-    \textit{Python, Back-Tracking Algorithm, PyQT5}\\
-	\multicolumn{2}{@{}p{\textwidth}@{}}{Implemented a Back-tracking algorithm in Python to complete any possible 9x9 Sudoku puzzle complete with an interactive GUI}
-
-\end{tabular*}
-
-\vspace{5mm}
-
-\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}m{0.49\textwidth} m{0.49\textwidth}}
-
-    \textbf{A* Visualizer} & \hfill May 11, 2023 - May 17, 2023\\
-    \textit{Individual Project}\\
-    \multicolumn{2}{@{}p{\textwidth}@{}}{\textit{Python, A* Algorithm, HTML, CSS, Javascript, Flask}}\\
-	\multicolumn{2}{@{}p{\textwidth}@{}}{Created and Deployed a live website using both front and back end technologies including Python Flask to interactively execute an A* path-finding algorithm}
-
-\end{tabular*}
-
-\vspace{5mm}
-
-\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}m{0.49\textwidth} m{0.49\textwidth}}
-
-    \textbf{PyGame Snake Clone} & \hfill May 20, 2022\\
-    \textit{Individual Project}\\
-    \multicolumn{2}{@{}p{\textwidth}@{}}{\textit{Python, PyGame}}\\
-	\multicolumn{2}{@{}p{\textwidth}@{}}{Recreated the retro game "Snake" in PyGame to experiment with tile based game design}
-
-\end{tabular*}
-
-\vspace{5mm}
-
-\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}m{0.49\textwidth} m{0.49\textwidth}}
-
-    \textbf{PyGame Flappy Bird Clone} & \hfill October 17, 2021 - October 20, 2021\\
-    \textit{Individual Project}\\
-    \multicolumn{2}{@{}p{\textwidth}@{}}{\textit{Python, PyGame}}\\
-	\multicolumn{2}{@{}p{\textwidth}@{}}{Developed a clone of the mobile game "Flappy Bird" using the PyGame library which let me explore collision detection and 2D gravity physics}
-
-\end{tabular*}
-
-\vspace{5mm}
-
-\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}m{0.49\textwidth} m{0.49\textwidth}}
-
-    \textbf{Burgham Sales} & \hfill July 2021 - August 2021\\
-    \textit{Warehouse Order Picker}\\
-    \multicolumn{2}{@{}p{\textwidth}@{}}{\textit{Pickering, ON}}\\
-	\multicolumn{2}{@{}p{\textwidth}@{}}{Locate and prepare items from inventory for delivery and operated warehouse equipment}
-
-\end{tabular*}
-
-\section*{Skills and Achievements}
+    \textbf{\Huge \scshape Gieonne Sabijon} \\ \vspace{1pt}
+    \small (905)-995-2711 $|$ \href{mailto:gieonnesabijon@gmail.com}{\underline{gieonnesabijon@gmail.com}} $|$ 
+    \href{https://www.linkedin.com/in/gieonne/}{\underline{linkedin.com/in/gieonne}} $|$
+    \href{https://github.com/gieonneSabijon}{\underline{github.com/gieonneSabijon}}$|$
+    \href{https://www.gieonnesabijon.com}{\underline{gieonnesabijon.com}}
+    
 \end{center}
 
-\begin{flushleft}
-\textbf{Languages/Softwares/Frameworks/Libraries}\\
-Python, Java, C, C\#, C++, HTML, CSS, JavaScript, SQL, Git, LaTeX, PostgreSQL, Microsoft Office, Photoshop, Premiere Pro, Illustrator, Bash, UNIX, Flexbox, React, PyGame, Flask, 
 
-\end{flushleft}
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Ontario Tech University}{Oshawa, Ontario}
+      {Bachelor of Science (Honours) Computer Science}{Sep. 2021 -- May 2025}
+  \resumeSubHeadingListEnd
 
-\vspace*{\fill}
 
-\begin{center}
-	\noindent\hrulefill\\
-	{\small \url{https://www.linkedin.com/in/gieonne/} $\cdot$ \url{https://github.com/gieonneSabijon/} $\cdot$ \url{www.gieonneSabijon.com/}}
-\end{center}
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
 
+    \resumeSubheading
+      {Warehouse Order Picker}{June 2021 -- August 2021}
+      {Burgham Sales}{Pickering, ON}
+      \resumeItemListStart
+        \resumeItem{Worked with inventory tracking software and handheld scanning devices to manage warehouse data accurately.}
+        \resumeItem{Investigated and resolved inventory discrepancies to ensure accurate stock records}
+        \resumeItem{Coordinated with team members to prioritize urgent orders and maintain workflow efficiency}
+        \resumeItem{Adapted quickly to new software tools and warehouse technologies}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {OTU Computer Science Club Member}{Sept 2023 -- May 2025}
+      {Ontario Tech University}{Oshawa, ON}
+      \resumeItemListStart
+        \resumeItem{Engaged with a community of students passionate about computer science, technology, and software development.}
+        \resumeItem{Attended technical presentations and professional development sessions to expand knowledge of computer science concepts.}
+      \resumeItemListEnd
+      
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{ClipSphere} $|$ \emph{Flutter, Dart, Firebase Authentication, Cloud Firestore, Firebase Storage}}{March 2025 -- April 2025}
+          \resumeItemListStart
+            \resumeItem{Developed a cross-platform mobile application using Flutter that enables users to create accounts, upload videos, and interact with content in a social media environment.}
+            \resumeItem{Built a scalable backend using Cloud Firestore to store user profiles, video metadata, comments, and user data}
+            \resumeItem{Integrated cloud-based authentication, database, and storage services to create a scalable full-stack mobile application.}
+            \resumeItem{Designed and developed responsive user interfaces with reusable Flutter widgets to improve maintainability and user experience.}
+            \resumeItem{Implemented real-time database synchronization using Firestore streams to enable live updates across users and devices.}
+          \resumeItemListEnd
+          
+      \resumeProjectHeading
+          {\textbf{TutorSeed} $|$ \emph{React, Next.js, Artifical Intelligence}}{July 2025 --  August 2025}
+          \resumeItemListStart
+            \resumeItem{Built an AI-powered learning platform that uses Socratic questioning to guide users through problem-solving instead of providing direct answers.}
+            \resumeItem{Designed prompt engineering workflows to enforce step-by-step reasoning, adaptive guidance, and a growth-focused learning style.}
+            \resumeItem{Developed a responsive web application using Next.js and React for an interactive tutoring experience.}
+            \resumeItem{Integrated large language model APIs to provide dynamic, context-aware tutoring across programming and academic subjects.}
+          \resumeItemListEnd
+          
+        \resumeProjectHeading
+          {\textbf{Ontario Tech ICS Generator} $|$ \emph{Webscraping, icalendar, REST API, Python}}{September 2024 --  September 2024}
+          \resumeItemListStart
+            \resumeItem{Built a CLI tool that generates .ics calendar files from Ontario Tech course schedules for easy import into Google Calendar and other calendar apps.}
+            \resumeItem{Implemented web scraping and API-based authentication to securely retrieve student schedule data from university systems.}
+            \resumeItem{Automated the conversion process to eliminate manual scheduling and improve usability for students.}
+            \resumeItem{Created a lightweight Flask backend with a simple frontend for easy event setup and management.}
+          \resumeItemListEnd
+          
+    \resumeSubHeadingListEnd
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Java, Python, C/C++/C\#, SQL, JavaScript, HTML/CSS, R, Dart, Typescript, LaTeX} \\
+     \textbf{Frameworks}{: React, Node.js, Next.js, Flask, Firebase, WordPress, Google Cloud Platform, PyTorch, TensorFlow, Express.js} \\
+     \textbf{Developer Tools}{: Git, Docker, TravisCI, Google Cloud Platform, PyCharm, IntelliJ, Eclipse, Unity, Overleaf} \\
+     \textbf{Libraries}{: pandas, NumPy, Matplotlib, Dart SDK, React Hooks, Firebase SDK, BeautifulSoup, iCalendar, OpenAI API, Gemini API, PyGame, Flask} 
+    }} \\
+ \end{itemize}
+
+
+%-------------------------------------------
 \end{document}
